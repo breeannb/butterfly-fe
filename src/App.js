@@ -1,40 +1,55 @@
 import React, { Component } from 'react';
 import './App.css';
-import request from 'superagent'; 
+// import Header from './Header.js';
+import HomePage from './HomePage.js'
+import DetailPage from './DetailPage'
+import List from './List'
+import ListItem from './ListItem'
+import AboutMe from './AboutMe'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+} from 'react-router-dom';
 
-export default class App extends Component {
-  
-  state = { butterflies: []}
-  
-  componentDidMount = async () => {
-    const data = await request.get(`https://glacial-lake-69827.herokuapp.com/butterflies`);
 
-    this.setState({ butterflies: data.body})
-  }
-  
-  
-  render() {
-    return (
-      <div>
-        {/* Home Page */}
-        {/* List */}
-          <div> 
-            My List
-            {
-              this.state.butterflies.map(butterfly => {
-                return <div>
-                  <p>{butterfly.name}</p>
-                  <p>{butterfly.wingspan}</p>
-                  <p>{butterfly.endangered}</p>
-                  <p>{butterfly.color}</p>
-              </div>
-              })
-            }
-          </div>
-        {/* List Item */}
-        {/* About Me Page */}
-      </div>
-    )
-  }
+
+  export default class App extends Component {
+    render() {
+        return (
+            <>
+            <div>
+                <Router>
+                    <Switch>
+                        <Route 
+                            path="/butterfly" 
+                            exact
+                            render={(routerProps) => <HomePage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/butterfly/:id" 
+                            exact
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/aboutme" 
+                            exact
+                            render={(routerProps) => <AboutMe {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/list" 
+                            exact
+                            render={(routerProps) => <List {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/listitem" 
+                            exact
+                            render={(routerProps) => <ListItem {...routerProps} />} 
+                        />
+                    </Switch>
+                </Router>
+            </div>
+            </>
+        )
+    }
 }
-
