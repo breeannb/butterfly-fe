@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import request from 'superagent'; 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  
+  state = { butterflies: []}
+  
+  componentDidMount = async () => {
+    const data = await request.get(`https://glacial-lake-69827.herokuapp.com/butterflies`);
+
+    this.setState({ butterflies: data.body})
+  }
+  
+  
+  render() {
+    return (
+      <div>
+        {/* Home Page */}
+        {/* List */}
+          <div> 
+            My List
+            {
+              this.state.butterflies.map(butterfly => {
+                return <div>
+                  <p>{butterfly.name}</p>
+                  <p>{butterfly.wingspan}</p>
+                  <p>{butterfly.endangered}</p>
+                  <p>{butterfly.color}</p>
+              </div>
+              })
+            }
+          </div>
+        {/* List Item */}
+        {/* About Me Page */}
+      </div>
+    )
+  }
 }
 
-export default App;
