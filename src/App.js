@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+// import Header from './Header.js';
+import HomePage from './HomePage.js'
+import DetailPage from './DetailPage'
+import List from './List'
+import ListItem from './ListItem'
+import AboutMe from './AboutMe'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+  export default class App extends Component {
+    render() {
+        return (
+            <>
+            <div>
+                <Router>
+                    <Switch>
+                        <Route 
+                            path="/butterfly" 
+                            exact
+                            render={(routerProps) => <HomePage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/butterfly/:id" 
+                            exact
+                            render={(routerProps) => <DetailPage {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/aboutme" 
+                            exact
+                            render={(routerProps) => <AboutMe {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/list" 
+                            exact
+                            render={(routerProps) => <List {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/listitem" 
+                            exact
+                            render={(routerProps) => <ListItem {...routerProps} />} 
+                        />
+                    </Switch>
+                </Router>
+            </div>
+            </>
+        )
+    }
 }
-
-export default App;
