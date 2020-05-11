@@ -22,7 +22,7 @@ import {
                 <Router>
                     <Switch>
                         <Route 
-                            path="/butterfly" 
+                            path="/" 
                             exact
                             render={(routerProps) => <HomePage {...routerProps} />} 
                         />
