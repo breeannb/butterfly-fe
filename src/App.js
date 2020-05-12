@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 // import Header from './Header.js';
-import HomePage from './HomePage.js'
-import DetailPage from './DetailPage'
-import List from './List'
-import ListItem from './ListItem'
-import AboutMe from './AboutMe'
+import HomePage from './HomePage.js';
+import DetailPage from './DetailPage';
+import List from './List';
+import ListItem from './ListItem';
+import AboutMe from './AboutMe';
+import Admin from './Admin';
+import './App.css';
 import {
     BrowserRouter as Router, 
     Route, 
@@ -18,7 +20,7 @@ import {
     render() {
         return (
             <>
-            <div>
+            <div className="container">
                 <Router>
                     <Switch>
                         <Route 
@@ -45,6 +47,11 @@ import {
                             path="/listitem" 
                             exact
                             render={(routerProps) => <ListItem {...routerProps} />} 
+                        />
+                        <Route 
+                            path="/admin" 
+                            exact
+                            render={(routerProps) => <Admin {...routerProps} />} 
                         />
                     </Switch>
                 </Router>
