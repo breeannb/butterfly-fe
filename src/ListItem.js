@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default class ListItem extends Component {
     render() {
         return (
-            <div>
+            <div className='single-butterfly-listitem'>
                 <Link to={`/butterfly/${this.props.object.id}`} >
                     <h2>Butterfly Name: {this.props.object.name}</h2>
                     <p>Wingspan (in inches): {this.props.object.wingspan}</p>

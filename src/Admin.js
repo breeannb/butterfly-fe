@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 // import request from 'superagent'
 import { addButterfly } from './Api-Calls'; 
+// import { Link } from 'react-router-dom'
+import Header from './Header'
 export default class Admin extends Component {
     
     state = {
@@ -16,6 +18,7 @@ export default class Admin extends Component {
         const newButterfly = await addButterfly(this.state)
 
         this.setState({ success: newButterfly})
+        
     }
 
     handleAllChange = (e) => {
@@ -31,7 +34,6 @@ export default class Admin extends Component {
         // console.log('hello', this.state) able to log out an object 
         return (
             <div className="form-container">
-                
                 <form onSubmit={this.handleSubmit}> 
                     <h2>New Butterfly</h2>
                     <label>
@@ -63,7 +65,7 @@ export default class Admin extends Component {
                         <input onChange={this.handleAllChange} value={this.state.owner_id} name="owner_id" type="number"/>
                     </label>
 
-                    <button>Submit</button>
+                    <button> Submit</button>
  
                 </form> 
             </div>

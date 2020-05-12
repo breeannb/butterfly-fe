@@ -6,6 +6,7 @@ import DetailPage from './DetailPage';
 import List from './List';
 import ListItem from './ListItem';
 import AboutMe from './AboutMe';
+import Header from './Header';
 import Admin from './Admin';
 import './App.css';
 import {
@@ -20,6 +21,8 @@ import {
     render() {
         return (
             <>
+            <Header />
+
             <div className="container">
                 <Router>
                     <Switch>

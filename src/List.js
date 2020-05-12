@@ -18,7 +18,7 @@ export default class App extends Component {
     return (
       <div>
           <div> 
-            This is the List Page
+            {/* This is the List Page */}
             {
               this.state.butterflies.map(onebutterfly => {
                 return <div>
