@@ -20,9 +20,12 @@ export default class DetailPage extends Component {
         return (
             
             <div>
-                This is a Details Page.
+                {/* This is a Details Page. */}
                 <div>
-                {JSON.stringify(this.state.butterfly)}
+                {/* {JSON.stringify(this.state.butterfly)} */}
+                    <h2>Butterfly Name: {this.state.butterfly.name}</h2>
+                    <p>Wingspan (in inches): {this.state.butterfly.wingspan}</p>
+                    <p>Main color of the butterfly? {this.state.butterfly.color}</p>
                 </div>
                 
             </div>
