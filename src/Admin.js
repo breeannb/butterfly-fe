@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import request from 'superagent'
 import { addButterfly } from './Api-Calls'; 
 // import { Link } from 'react-router-dom'
-import Header from './Header'
+// import Header from './Header'
 export default class Admin extends Component {
     
     state = {

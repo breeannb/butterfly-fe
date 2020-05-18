@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 import React, { Component } from 'react';
 import './App.css';
 // import Header from './Header.js';
@@ -13,6 +14,7 @@ import {
     BrowserRouter as Router, 
     Route, 
     Switch,
+    Link
 } from 'react-router-dom';
 
 
@@ -22,9 +24,16 @@ import {
         return (
             <>
             <Header />
-
+            
+            
             <div className="container">
                 <Router>
+                <ul>
+                    My Tiny Navigation Bar
+                    <Link to="/admin"><div>Form</div></Link>
+                    <Link to="/list"><div>List Page</div></Link>
+                    <Link to="/aboutme"><div>About Me</div></Link>
+                </ul>
                     <Switch>
                         <Route 
                             path="/" 
