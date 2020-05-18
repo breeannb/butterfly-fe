@@ -68,10 +68,10 @@ export default class Admin extends Component {
                         <input onChange={this.handleAllChange} value={this.state.owner_id} name="owner_id" type="number"/>
                     </label>
 
-                    {/* <label>
+                    <label>
                         Wing Pattern ID: 
-                        <input onChange={this.handleAllChange} value={this.state.owner_id} name="wingpattern_id" type="number"/>
-                    </label> */}
+                        <input onChange={this.handleAllChange} value={this.state.wingpattern_id} name="wingpattern_id" type="number" min="1" max="3"/>
+                    </label>
 
                     <button> Submit</button>
  
