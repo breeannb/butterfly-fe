@@ -10,7 +10,8 @@ export default class Admin extends Component {
             wingspan: 0, 
             endangered: false, 
             color: '', 
-            owner_id: 0
+            owner_id: 0, 
+            wingpattern_id: 0,
     }
 
     handleSubmit = async (e) => {
@@ -36,10 +37,12 @@ export default class Admin extends Component {
             <div className="form-container">
                 <form onSubmit={this.handleSubmit}> 
                     <h2>New Butterfly</h2>
+                    
                     <label>
                         Butterfly Name
                         <input onChange={this.handleAllChange} value={this.state.name} name="name" />
                     </label>
+
                     <label>
                         Wingspan in inches:
                         <input onChange={this.handleAllChange} value={this.state.wingspan} name="wingspan" type="number"/>
@@ -63,6 +66,11 @@ export default class Admin extends Component {
                     <label>
                         Owner ID: 
                         <input onChange={this.handleAllChange} value={this.state.owner_id} name="owner_id" type="number"/>
+                    </label>
+
+                    <label>
+                        Wing Pattern ID: 
+                        <input onChange={this.handleAllChange} value={this.state.owner_id} name="wingpattern_id" type="number"/>
                     </label>
 
                     <button> Submit</button>

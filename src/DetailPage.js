@@ -26,6 +26,7 @@ export default class DetailPage extends Component {
                     <h2>Butterfly Name: {this.state.butterfly.name}</h2>
                     <p>Wingspan (in inches): {this.state.butterfly.wingspan}</p>
                     <p>Main color of the butterfly? {this.state.butterfly.color}</p>
+                    <p>Wing Pattern Use {this.state.butterfly.wingpattern}</p>
                 </div>
                 
             </div>

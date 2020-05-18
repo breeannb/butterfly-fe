@@ -8,6 +8,7 @@ export default class ListItem extends Component {
                 <Link to={`/butterfly/${this.props.object.id}`} >
                     <h2>Butterfly Name: {this.props.object.name}</h2>
                     <p>Wingspan (in inches): {this.props.object.wingspan}</p>
+                    <p>Wingspan Pattern Usage: {this.props.object.wingpattern}</p>
                     <p>Is this butterfly endangered: {this.props.object.endangered
                         ? 'it is endangered'
                         : 'it is not endangered'}</p>
