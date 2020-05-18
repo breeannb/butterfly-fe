@@ -37,7 +37,7 @@ export default class Admin extends Component {
             <div className="form-container">
                 <form onSubmit={this.handleSubmit}> 
                     <h2>New Butterfly</h2>
-                    
+
                     <label>
                         Butterfly Name
                         <input onChange={this.handleAllChange} value={this.state.name} name="name" />
@@ -68,10 +68,10 @@ export default class Admin extends Component {
                         <input onChange={this.handleAllChange} value={this.state.owner_id} name="owner_id" type="number"/>
                     </label>
 
-                    <label>
+                    {/* <label>
                         Wing Pattern ID: 
                         <input onChange={this.handleAllChange} value={this.state.owner_id} name="wingpattern_id" type="number"/>
-                    </label>
+                    </label> */}
 
                     <button> Submit</button>
  
